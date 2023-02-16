@@ -29,7 +29,11 @@ var isMobile = {
 };
 
 if (isMobile.Android()) {
-  document.location.href ="intent://arvr.google.com/scene-viewer/1.0?file=https://sidamocafe.github.io/modelname/model.glb#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;";
+  <model-viewer ar
+              ar-modes="scene-viewer webxr quick-look"
+              alt="A 3D model of ?"
+              src="model.glb"></model-viewer>
+
 }
 else if(isMobile.iOS()) {
   document.location.href="model.usdz";
