@@ -1,27 +1,48 @@
 <!DOCTYPE html>
-<html lang = "en">
-    <head>
-        <meta charset = "UTF-8">
-        <meta http-equiv = "x-ua-compatible" content = "IE=edge">
-        <meta name = "viewport" content= "width=device-width, initial-scale=1.0">
-        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-        
-        <title>portfolio</title>
 
-        <style>
-            .box {display:flex;}
-            mode-viewer {width: 800px; height: 500px; margin:0, auto}
-        </style>
-    </head>
+<html>
 
-    <body>
-        <div class = "box">
-            <div>Hey check this out</div>
-            <div style="border:1px solid black">
-                <model-viewer camera-controls alt="Model" src="model.glb">
-                </model-viewer>
-            </div>
-        </div>
-    </body> 
+<head>
+
+<script>
+
+var isMobile = {
+    Android: function() {
+      return navigator.userAgent.match(/Android/i);
+  },
+    BlackBerry: function() {
+      return navigator.userAgent.match(/BlackBerry/i);
+  },
+    iOS: function() {
+      return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+  },
+    Opera: function() {
+      return navigator.userAgent.match(/Opera Mini/i);
+  },
+    Windows: function() {
+      return navigator.userAgent.match(/IEMobile/i);
+  },
+    any: function() {
+      return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+  }
+
+};
+
+if (isMobile.Android()) {
+  <a href="intent://arvr.google.com/scene-viewer/1.0?file=https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/master/2.0/Avocado/glTF/Avocado.gltf#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;">Avocado</a>
+}
+else if(isMobile.iOS()) {
+  document.location.href="model.usdz";
+}
+else {
+  document.location.href="intent://arvr.google.com/scene-viewer/1.0?file=modelname.glb#Intent;scheme=https;package=com.google.android.googlequicksearchbox;action=android.intent.action.VIEW;S.browser_fallback_url=https://developers.google.com/ar;end;"
+}
+
+</script>
+
+</head>
+
+<body>
+</body>
 
 </html>
